@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Projects by Mani</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+			<div id="main2">
+					<section id="one">
+						<header class="major">
+							<h2>Macro keybord with with Cherry MX Brown and RGB.</h2>
+						</header>
+						<p>I originally made this project for a friend of mine who wanted a macro keyboard the size of a numpad but 
+                            though the ones available were either too expensive, ugly or both.<br>
+                            It was to be used with a drawing tablet so it needed to be small and not too tall.</p>
+
+                        <p>I used an Arduino Pro micro because of its ATmega32U4 enabling it to be used as a HID, in our case a keyboard.<br>
+                            The LEDs are ws2812b and can easily be used with the FastLED library.</p>
+
+                        <p>I chose not to hardcode keys or key combinations (Ctrl + C etc.) but instead used the F13 to F21 key. That way, i can change the macros to 
+                            what ever i want without a need to change the code in the macro keyboard. This can be done either in the specific 
+                            software you use or OS wide with a software like AutoHotKey.<br>
+                            However, some linux distros use F13-F21 for special functions. these can be unbound with, for example, xmodmap.</p>
+
+                        <p>The code itself is easy enough to follow. It has a hardcoded list of colors to cycle through, a class for the buttons to handle debouncing and presses.
+                            The main loop checks all the main buttons and depending on debounce time and the state of the button either runs keyboard.press or Keyboard.release.<br>
+                            The second part handles the color switching and picks the color depending on the variable ledCount.
+                        </p>
+
+					</section>
+
+					<section id="two">
+						<h2>Images:</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/macro_board/macro_board_1.png" class="image fit thumb"><img src="images/thumbs/macro_board_thumbnail.png" alt="" title="TITLED!"/></a>
+                                <h3> </h3>
+							</article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/macro_board/macro_board_2.png" class="image fit thumb"><img src="images/macro_board/macro_board_2_thumbnail.png" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/macro_board/macro_board_inside.jpg" class="image fit thumb"><img src="images/macro_board/macro_board_inside_thumbnail.png" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/macro_board/macro_board_without_caps2.png" class="image fit thumb"><img src="images/macro_board/macro_board_without_caps2_thumbnail.png" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="https://youtu.be/GqXOdU-qTxM" class="image fit thumb" id="vid"><img src="images/thumbs/macro_board_video_thumbnail.png" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+						</div>
+                        <h3>You can find the STL files and C++ code <a href="https://github.com/Mquack/macro_keyboard">here</a>.</h3><br>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Back</a></li>
+						</ul>
+					</section>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

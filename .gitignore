@@ -1,0 +1,6 @@
+.vs*
+.vs/VSWorkspaceState.json
+.vs/Mquack/config/applicationhost.config
+.vs/Mquack/v16/.suo
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
