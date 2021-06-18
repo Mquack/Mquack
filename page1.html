@@ -13,19 +13,19 @@
 							<h2>Macro keybord with with Cherry MX Brown and RGB.</h2>
 						</header>
 						<p>I originally made this project for a friend of mine who wanted a macro keyboard the size of a numpad but 
-                            though the ones available were either too expensive, ugly or both.<br>
+                            thought the ones available were either too expensive, ugly or both.<br>
                             It was to be used with a drawing tablet so it needed to be small and not too tall.</p>
 
                         <p>I used an Arduino Pro micro because of its ATmega32U4 enabling it to be used as a HID, in our case a keyboard.<br>
                             The LEDs are ws2812b and can easily be used with the FastLED library.</p>
 
                         <p>I chose not to hardcode keys or key combinations (Ctrl + C etc.) but instead used the F13 to F21 key. That way, i can change the macros to 
-                            what ever i want without a need to change the code in the macro keyboard. This can be done either in the specific 
+                            what ever I want without a need to change the code in the macro keyboard. This can be done either in the specific 
                             software you use or OS wide with a software like AutoHotKey.<br>
                             However, some linux distros use F13-F21 for special functions. these can be unbound with, for example, xmodmap.</p>
 
                         <p>The code itself is easy enough to follow. It has a hardcoded list of colors to cycle through, a class for the buttons to handle debouncing and presses.
-                            The main loop checks all the main buttons and depending on debounce time and the state of the button either runs keyboard.press or Keyboard.release.<br>
+                            The main loop checks all the main buttons and depending on debounce time and the state of the button either runs Keyboard.press or Keyboard.release.<br>
                             The second part handles the color switching and picks the color depending on the variable ledCount.
                         </p>
 
