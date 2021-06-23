@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Home server</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+			<div id="main2">
+					<section id="one">
+						<header class="major">
+							<h2>My home server</h2>
+						</header>
+                        
+                        <h4>I currently run the following on my home server:</h4>
+                        <p>
+                            It started with a Raspberry Pi with an external hard disk drive used as a file server that got "upgraded" to a old laptop I no longer used.
+                            When that laptop suddenly stopped working due to brittle solder to the gpu and I got tired of stripping it down and reflowing it in my oven(2 times..) and 
+                            I finally bought an Intel Celeron G3930 for its unmatched performance, or was it its low power consumption?<br> At 15 watt at idle it is efficient enough to run 24/7.
+                        </p>
+                        <ul>
+                            <li><u>Openhab</u>
+                                <p>Home automation with google integration. <br>
+                                    Currently running 5 wifi lightbulbs(esp8266) reflashed with Tasmota to restrict the lightbulbs communication to the local network.<br>
+                                    2 power switches to minimize energy consumption in standby.<br>
+                                    Everything communication through a mqtt server.<br>
+                                    By binding MotionEye and displaying both temperature and soil sensors on Openhab. Everything "smart" can be monitored or controlled from one app or webgui.
+                                </p>
+                            </li>
+                            
+                            <li><u>Wireguard-server</u>
+                                <p>Enables me to tunnel home from outside the LAN for maintenance or that single time you need to visit a webpage without SSL on an open wifi connection in an airport....</p>
+                            </li>
+                            <li><u>Openvpn-server</u>
+                                <p>Same as Wireguard but for devices or persons without wireguard.</p>
+                            </li>
+                            <li><u>Local file server</u>
+                                <p>Specific directories are accessible from specific IPs through NFS to lessen the need for large hard drive disks on our PCs.</p>
+                            </li>
+                            <li><u>Pi-hole</u>
+                                <p>DNS sinkhole to filter unwanted content with an ever expanding blacklist.</p>
+                            </li>
+                            <li><u>Temperature logger</u>
+                                <p>Receiving temperatures from a raspberry pi with two temperature sensors(see other project).</p>
+                            </li>
+                            <li><u>Soil moisture logger</u>
+                                <p>Receiving the soil moisture levels in a plant pot sent from an Arduino with wifi(see other project).</p>
+                            </li>
+                            <li><u>Jellyfin media system</u>
+                                <p>Easily view my pictures and videos on other devices from anywhere.</p>
+                            </li>
+                            <li><u>Nextcloud</u>
+                                <p>Self-hosted cloud service with a self-signed certificate. Replaces services like Google Drive or Dropbox.</p>
+                            </li>
+                            <li><u>MotionEye</u>
+                                <p>Frontend for motion(open source security camera software for linux) that enables you to easily overview multiple cameras on your network from a single webinterface.</p>
+                            </li>
+                        </ul>
+					</section>
+
+					<section id="two">
+						<ul class="actions">
+							<li><a href="index.html" class="button">Back</a></li>
+						</ul>
+					</section>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
