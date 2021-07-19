@@ -10,19 +10,38 @@
 			<div id="main2">
 					<section id="one">
 						<header class="major">
-							<h2>2D game about a bad ass bunny kicking ass, made in Godot 3.2.3.</h2>
+							<h2>2D platformer about a cool bunny kicking ass, made in Godot 3.2.3.</h2>
 						</header>
-						<p>Kanin, swedish for rabbit, is a game about a rabbit on the hunt for the golden carrot. 
+						<p>Kanin, swedish for rabbit, is a game about a rabbit on the hunt for the golden carrot.
                             In his way are the hordes of the wilderness, foxes, badgers and much more.</p>
 
                         <p>The game is still in its early stages with the basic environment and movements done.<br>
-                            Mouse aiming on pc, dubble jump, bouncing on mushrooms, collapsing leaf, spike traps, </p>
+                            Mouse aiming on pc, dubble jump, wall jump, bouncing on mushrooms, collapsing leaves, spike traps and collectable items are implemented.</p>
+
+												<p>Once of the main decisions that are left is wether the game should have one version across all platforms (Windows/Linux and Android/iOS)
+												or if there should be two different games with different game mechanics.<br>
+														This is mainly because of the limitations on mobile devices touch screen control. <br>
+														One example is the aim and shoot functionality that works seamlessly on PC with the mouse.
+														While I've created a working "touch to aim and shoot" functionality for the game, I must either
+														 shrink the viewable display area(to accommodate space for the control buttons) or ignore the touch
+														 input for aim+shoot in the lower right and left area of the display(to avoid misfires when using control buttons).<br>
+														 Another approach would be to separate the aim and shoot so that a user uses touch to aim with the current
+														 aim sprite and then a touch button to shoot. Moving ones hand away from the main controls would however
+														 decrease the fluidity of the gameplay.
+													 	</p>
+														<p>
+															Another solution would be some kind of "aimbot" where the player locks on to enemies. Either by auto-lock or touch-to-lock.
+														</p>
+														<p>
+															This project is a collaboration between me and an artist. This is the first time that I've closly worked on a programming-project with
+															a non-programmer. It's been really interesting and educational to see how we each approach different problems for different solutions.<br>
+														</p>
 
                         <p>Artwork and animations are made by <a href="https://www.instagram.com/konatski/">Konatski Art</a>.</p>
 
 
 
-                        
+
 					</section>
 
 					<section id="two">
@@ -40,8 +59,8 @@
                                 <a href="https://youtu.be/pB0U01YBmBU" class="image fit thumb" id="vid"><img src="images/thumbs/kanin-video-thumbnail.png" alt="" /></a>
                                 <h3>Gameplay sample</h3>
                             </article>
-                            
-                            
+
+
 						</div>
                         <h3>You can find the repo <a href="https://github.com/Mquack/godotgame-main">here</a>.</h3><br>
 						<ul class="actions">

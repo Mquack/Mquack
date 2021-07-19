@@ -98,7 +98,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #a2a2a2;
+		color: #6e6b6b;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
@@ -3242,5 +3242,17 @@ input, select, textarea {
 	}
 	#vid.image.thumb:after {
 		content: none;
-		
+
+	}
+	#ulcss{
+		display: grid;
+    grid-template-columns: repeat(2, 1fr);
+	}
+
+	.flex-container {
+    display: flex;
+	}
+	.flex-child {
+    flex: 1;
+    border: 2px;
 	}
