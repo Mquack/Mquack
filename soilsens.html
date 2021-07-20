@@ -12,7 +12,16 @@
 						<header class="major">
 							<h2>Soil moisture sensor</h2>
 						</header>
-						<p></p>
+						<p>
+							You can find these types of soil moisture senors all over the internet. They measure the capacitance in the soil around them and returns a value.
+							Coupled with a wifi enabled arduino you could handle the data in a lot of different ways.<br>
+							I chose to send it as a HTTP packet to a tiny flask server running on a computer. The WeMos D1 board might be overkill for this project but with its 
+							low price and available battery shield i thought it suitable.
+						</p>
+						<p>
+							With a battery connected and deepsleep implemented you can with a few lines of code monitor your plants remotely, or setup python-telegram-bot so that
+							you get a reminder to water your plants. The battery life on my device lasts slightly more than a month which is good enough for a old 500mAh battery i had lying around.
+						</p>
 
 					</section>
 

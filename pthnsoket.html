@@ -16,8 +16,7 @@
                              There are two versions of the scripts, one uses the UDP network protocol and the other uses the TCP.<br>
                              Because UDP lacks all the back-and-forth communication that TCP uses to make sure your data is transfered properly, it might be wiser to use the TCP
                             version of the scripts if reliability is a priority.</p>
-                             <p>In this specific project I have used the UDP version without any problems for more than a year. But if i were to modify this script to send a file,
-							  i would use the TCP version.<br>
+                             <p>In this specific project I have used the UDP version without any problems for more than a year.<br>
 							If the server controls something like a robot and speed is critical, UDP is the way to go.</p>
 							<p>My code uses the function getTemps to with the help of the W1ThermSensor library get the temperature from two different sensors, one inside and one outside.
 								The W1ThermSensor can be installed through pip and 1-Wire need to be enabled in the Raspberry Pis config.
