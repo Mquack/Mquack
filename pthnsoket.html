@@ -10,7 +10,7 @@
 			<div id="main2">
 					<section id="one">
 						<header class="major">
-							<h2>Logging temperatures over local network with Python sockets</h2>
+							<h2>Logging temperatures over local network with Python sockets and DS18S20</h2>
 						</header>
 						<p>This is a straight forward server/client python communication project.
                              There are two versions of the scripts, one uses the UDP network protocol and the other uses the TCP.<br>
@@ -18,7 +18,7 @@
                             version of the scripts if reliability is a priority.</p>
                              <p>In this specific project I have used the UDP version without any problems for more than a year.<br>
 							If the server controls something like a robot and speed is critical, UDP is the way to go.</p>
-							<p>My code uses the function getTemps to with the help of the W1ThermSensor library get the temperature from two different sensors, one inside and one outside.
+							<p>My code uses the function getTemps to with the help of the W1ThermSensor library get the temperature from two different DS18S20 sensors, one inside and one outside.
 								The W1ThermSensor can be installed through pip and 1-Wire need to be enabled in the Raspberry Pis config.
 								The SERVER variable in the client script is hardcoded so the machine running the server script should have a static IP.
 							</p>
@@ -29,11 +29,11 @@
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/python_sockets/RPi_3b.png" class="image fit thumb"><img src="images/thumbs/RPi_3b_thumbnail.png" alt="" title="TITLED!"/></a>
-                                <h3> </h3>
+                                <h3> Raspberry Pi 2/3/4 </h3>
 							</article>
                             <article class="col-6 col-12-xsmall work-item">
                                 <a href="images/python_sockets/ds1820.png" class="image fit thumb"><img src="images/thumbs/ds1820_thumbnail.png" alt="" /></a>
-                                <h3> </h3>
+                                <h3> Dallas DS18S20 sensor</h3>
                             </article>
 						</div>
                         <h3>You can find the python scripts <a href="https://github.com/Mquack/pythonSockets">here</a>.</h3><br>
