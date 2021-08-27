@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SpiderBot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+			<div id="main2">
+					<section id="one">
+						<header class="major">
+							<h2>SpiderBot with bluetooth and android app</h2>
+						</header>
+						<p>This is one of my least favourite projects. It's been marred by so many of problems that i've lost count.</p>
+                        <p>It began as a robot controlled through wifi with a webinterface that worked most of the time. The difficulty of connecting it to a new network made the
+                            user friendliness nonexistent and i tried to switch over to communication through two nRF24l01 modules.
+                        </p>
+                        <p>
+                            I never got the nRF24l01s to work properly and I dont really know why. It could have been bad connections with the servos jump wires, some incompatibility with
+                            the stm32 microcontrollers, bad soldering or bad code. The problem could have been the controller or the robot itself.</br> 
+                            The nRF24l01 modules, for example, didn't work at all until i removed the pinheaders and replaced them with wires.
+                        </p>
+                        <p>
+                            In an effort to reduce instances where something could go wrong I switched to bluetooth. A HC-05 bluetooth module to be precise. 
+                            I cut off the jump wires and soldered them to a protoboard that connected all parts.
+                        </p>
+                        <p>
+                            The arduino sketch is pretty straightforward. It has a simple "SpiderServo" class that handles the attach and initial movement. Ideally the movement functions
+                            should be moved from the main file to SpiderServo.</br>
+                            The main loop waits for bluetooth data and runs the appropriate function.
+                        </p>
+                        <p>
+                            For the android app i followed a couple of online guides on bluetooth and made a couple of changes to suite my needs. I kept it simple and skipped pairing new
+                            devices so the HC-05 need to be paired with the phone like any other BT device.</br>
+                            After selecting your SpiderBot in the list of paired bluetooth devices the app connects and control buttons are enabled.
+                        </p>
+                        <p>
+                            The data sent to the SpiderBot is in the buttons TAG. This was the easiest way i could think of to use the same OnTouchListener without a long Switch-statement.</br>
+                            An OnTouchListener that detects when the button is pressed and released enables the user to hold a button for continuous movement.
+                        </p>
+                        <h4>About servos</h4>
+                        <p style="font-size:80%;"> The servos used in this project are the SG90, an cheap servo that should be avoided if at all possible.</br> 
+                            If I for some reason ever want to use small servos
+                            in a project it will be the MG90s servo with metal gears. Unfortunately I only had two MG90s servos and were unaware of the problems of the SG90s so i ordered 
+                            a 12-pack of them. Only eight of them are still working and one of them have a 3d printed gear.
+                        </p>
+					</section>
+
+					<section id="two">
+						<h2>Images:</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/spiderbot/spider1.jpg" class="image fit thumb"><img src="images/spiderbot/spider1_thumbnail.jpg" alt=""/></a>
+                                <h3> </h3>
+							</article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/spiderbot/spider2.jpg" class="image fit thumb"><img src="images/spiderbot/spider2_thumbnail.jpg" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/spiderbot/spider3.jpg" class="image fit thumb"><img src="images/spiderbot/spider3_thumbnail.jpg" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/spiderbot/new_sp1.gif" class="image fit thumb"><img src="images/spiderbot/new_sp1.gif" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/spiderbot/new_sp3.gif" class="image fit thumb"><img src="images/spiderbot/new_sp3.gif" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+						</div>
+                        <h4>You can find the arduino sketch and STL files <a href="https://github.com/Mquack/spiderbot_stm32">here</a>,</h4>
+                        <h4>and the Android Studio project <a href="https://github.com/Mquack/SpiderRemote">here</a>.</h4>
+                        <h5>Link to first activity in the android project <a href="https://github.com/Mquack/SpiderRemote/blob/main/app/src/main/java/com/example/spiderremote/MainActivity.java">here</a>.</h5>
+                        <h5>Link to second activity in the android project <a href="https://github.com/Mquack/SpiderRemote/blob/main/app/src/main/java/com/example/spiderremote/MainActivity2.java">here</a>.</h5><br>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Back</a></li>
+						</ul>
+					</section>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
