@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>GifMaker</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+			<div id="main2">
+					<section id="one">
+						<header class="major">
+							<h2>Video to Gif with GUI</h2>
+						</header>
+						<p>If you ever tried to make a GIF from a video you might know that there are a lot of websites offering easy to use services. </br>
+                            But those are often painfully slow and sometimes have limits on video length or resolution.
+                            So we want a program, but a google search for what we want returns alot of sketchy apps from dubious sources or apps behind silly paywalls for such a simple task.
+                        </p>
+                        <p>
+                            Making this portfolio I wanted to replace a couple of the videos with GIFs and this python script accually made it much easier.</br>
+                            I have included most of the properties a user would like to customize, length, fps and resolution.</br>
+                            I used Tkinter for the GUI and moviepy for manipulating the video. TKinter is fairly easy to work with and works on both windows and linux. </br>
+                            Moviepy depends on a lot of other modules which were a bit problematic.
+                        </p>
+                        
+                        <h4>Usage</h4>
+                        <p style="font-size:80%;"> Making the file executable with chmod u+x thescript.py and setting the filemanagers preference to "Run executable.." makes the script
+                            easier to use.</br>
+                            I had a harder time using to in Windows, i tried pyInstaller, cx_freeze and py2exe but didnt manage to create an executable file from the script (the import of VideoFileClip was
+                            necessary to run them due to the way moviepy handles dependencies). The script runs just fine from PowerShell.
+                        </p>
+					</section>
+
+					<section id="two">
+						<h2>Images:</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/gifmaker/gifmaker1.png" class="image fit thumb"><img src="images/gifmaker/gifmaker1_thumbnail.png" alt=""/></a>
+                                <h3> </h3>
+							</article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/gifmaker/gifmaker2.png" class="image fit thumb"><img src="images/gifmaker/gifmaker2_thumbnail.png" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+                            <article class="col-6 col-12-xsmall work-item">
+                                <a href="images/gifmaker/gifmaker3.png" class="image fit thumb"><img src="images/gifmaker/gifmaker3_thumbnail.png" alt="" /></a>
+                                <h3> </h3>
+                            </article>
+						</div>
+                        <h4>You can find the python script <a href="https://github.com/Mquack/gifmaker2021">here</a>,</h4>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Back</a></li>
+						</ul>
+					</section>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
