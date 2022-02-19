@@ -12,85 +12,98 @@
 						<header class="major">
 							<h2>My home server</h2>
 						</header>
-
-                        <h4>I currently run the following on my home server:</h4>
-                        <p>
-                            It started with a Raspberry Pi with an external hard disk drive used as a file server that got "upgraded" to a old laptop I no longer used.
-                            When that laptop suddenly stopped working due to brittle solder to the gpu and I got tired of stripping it down and reflowing it in my oven (2 times..) and
-                            I finally bought an Intel Celeron G3930 for its unmatched performance, or was it its low power consumption?<br> At 15 watt at idle it is efficient enough to run 24/7.
-                        </p>
+						<p>
+						I started out with a Raspberry Pi 2 with an external HDD but soon moved on to an older laptop I no longer used.
+						</br>I soon tired of the lack of I/O and when the laptop broke down for the third time i moved on to a desktop computer.
+						</br> I expanded the storage and its funcionality with time and played around with VMs and Docker but the old CPUs i used could not really handle alot. 
+						</br>That changed when I swapped out my G3930 for an i5 7400 and installed Proxmox. 
+						</br>Now I can easily run everything in its own container and with automatic backups i can roll them back if anything goes wrong.
+						</p>
+						<p>Everything below runs in its own LXC container with regular backups and can be easily maintained through Proxmox webinterface.</p>
                         <ul>
                             <li>
-															<u>Openhab</u>
-                                <p>Home automation with google integration. <br>
+								<u>OpenHab</u>
+                                	<p>Home automation with google integration. <br>
                                     Currently running 5 wifi lightbulbs (with esp8266) reflashed with Tasmota (open source firmware) to restrict the
-																		lightbulbs communication to the local network.<br>
-																		With Tasmota running on the bulbs it's communication is limited to my local network and they mainly talk to my
-																		server (you can configure the device with its webinterface)
-																		with the help of a Mosquitto MQTT server.<br>
+									lightbulbs communication to the local network.<br>
+									With Tasmota running on the bulbs it's communication is limited to my local network and they mainly talk to my
+									server (you can configure the device with its webinterface)
+									with the help of a Mosquitto MQTT server.<br>
                                     Two power switches running Tasmota are used to minimize the energy consumption of other devices in standby.
                                     These are also communicating through the Mosquitto MQTT server.<br>
-                                    By binding MotionEye and displaying both temperature and soil sensors on Openhab. Everything "smart" (i.e connected) can be
-																		monitored or controlled from one app or webgui.<br>
-																		All the devices can be automated with rules and patterns. For example a shut of timer to turn off all devices at night, or to
-																		turn on light in the morning during the darker months of the year.
+                                    By binding MotionEye and displaying both temperature and soil sensors on OpenHab. Everything "smart" (i.e connected) can be
+									monitored or controlled from one app or webgui.<br>
+									All the devices can be automated with rules and patterns. For example a shut of timer to turn off all devices at night, or to
+									turn on light in the morning during the darker months of the year.
                                 </p>
                             </li>
 
                             <li>
-															<u>Wireguard-server</u>
-                                <p>
-																	Enables me to tunnel home from outside the LAN for maintenance or that single time you need to visit a webpage without SSL on
-																	 an open wifi connection in an airport....<br>
-																	Also useful to get rid of ads when you're outside of your home network, if you have a pi-hole service running.
-																 </p>
+								<u>Wireguard server</u>
+                                	<p>
+										Enables me to tunnel home from outside the LAN for maintenance or to access my local storage.<br>
+										Also useful to get rid of ads when you're outside of your home network, if you have a pi-hole service running.
+										</br> This server is more or offline these days.
+									</p>
                             </li>
                             <li>
-															<u>Openvpn-server</u>
-                                <p>Same as Wireguard but for devices or persons without wireguard.</p>
+								<u>Tailscale server</u>
+                                	<p>Same as Wireguard but easier to use and does not require open ports to WAN, the Wireguard server is more or offline these days.</p>
                             </li>
                             <li>
-															<u>Local file server</u>
-                                <p>Specific directories are accessible from specific IPs through NFS to lessen the need for large hard drive disks on our PCs.</p>
+								<u>Samba server</u>
+                                	<p>I swapped out my NFS server for a Samba server, they are easier to access from windows machines than NFS disks. </br>Having a samba server reduces the need for large hard drive disks on our laptops and desktops.</p>
                             </li>
                             <li>
-															<u>Pi-hole</u>
-                                <p>
-																	DNS sinkhole to filter unwanted content with an ever expanding blacklist.<br>
-																	The easiest way to use it is to install it on a supported OS and force your router to look for a DNS server at your Pi-holes IP.
-																	I often vpn home to get rid of ads when i'm out and about.
-																	This is in my opinion one of the best services available for everyone with a Raspberry Pi laying around.
-																</p>
+								<u>Pihole</u>
+									<p>
+									DNS sinkhole to filter unwanted content with an ever expanding blacklist.<br>
+									The easiest way to use it is to install it on a supported OS and force your router to look for a DNS server at your Pi-holes IP.
+									I often vpn home to get rid of ads when i'm outside.
+									This is in my opinion one of the best services available for everyone and even runs on a Raspberry Pi.
+									</p>
+                            </li>
+							<li>
+								<u>Python scripts</u>
+									<p> A couple of python scripts running in a container together. Everything that needs logging is saved in a SQLite database</p>
+								<ul>
+									<li>
+										<u>Temperature logger</u>
+											<p>Receiving temperatures from a Raspberry Pi with two temperature sensors (see other project) through python sockets.</p>
+									</li>
+									<li>
+										<u>Soil moisture logger</u>
+											<p>Receiving the soil moisture levels in a plant pot sent from an Arduino with wifi (see other project) through python sockets.</p>
+									</li>
+									<li>
+										<u>Temperature and moisture graphs</u>
+											<p>Simple Flask server to display temperatures and soil moisture levels with graphs.</p>
+									</li>
+									<li>
+										<u>Script to turn off "smart" devices</u>
+											<p>
+												Receiving button press from an battery powered arduino with deepsleep enabled that turns off all "smart" devices, 
+												useful for when you want to go to sleep but not fiddle with your phone or talk to Google Assistant.</br>
+												Turns off Philips Hue light with PUT requests to the Hue Bridge and other "smart" devices via OpenHab
+											</p>
+									</li>
+									<li>
+										<u>Europa Universalis 4 Achievement tracker</u>
+											<P>A Flask server that enables you to search through available achievements you haven't taken yet by name ( and maybe by country in the future).</P>
+									</li>
+								</ul>
+							</li>
+                            <li>
+								<u>Jellyfin media system</u>
+                                	<p>Easily view my pictures and videos on other devices from anywhere.</p>
                             </li>
                             <li>
-															<u>Temperature logger</u>
-                                <p>
-																	Receiving temperatures from a raspberry pi with two temperature sensors (see other project).
-																</p>
-                            </li>
-                            <li>
-															<u>Soil moisture logger</u>
-                                <p>Receiving the soil moisture levels in a plant pot sent from an Arduino with wifi (see other project).</p>
-                            </li>
-                            <li><u>Jellyfin media system</u>
-                                <p>Easily view my pictures and videos on other devices from anywhere.</p>
-                            </li>
-                            <li>
-															<u>Nextcloud</u>
-                                <p>
-																	Self-hosted cloud service with (in my case) a self-signed certificate. Replaces services like Google Drive or Dropbox.<br>
-																	A really nice service to have if you don't want to share your files with companies that don't value your privacy or if you
-																	just want to have more control over your own information.
-																</p>
-                            </li>
-                            <li>
-															<u>MotionEye</u>
-                                <p>
-																	Frontend for motion (open source security camera software for linux) that enables you to easily overview multiple cameras on
-																	 your network from a single webinterface.<br>
-																	 Useful if you for example have a couple of Rpis with cameras running motion. Can be viewed from outside your network without
-																	  opening additional ports if you have a VPN server.
-																</p>
+								<u>Nextcloud</u>
+                                	<p>
+									Self-hosted cloud service only accessible on my home network ( or through VPN ). Replaces services like Google Drive or Dropbox.<br>
+									A really nice service to have if you don't want to share your files with companies that don't value your privacy or if you
+									just want to have more control over your own information.
+									</p>
                             </li>
                         </ul>
 					</section>
